@@ -14,7 +14,7 @@ app = Flask(__name__)
 CORS(app)
 DASHBOARD_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dashboard")
 
-TOKEN_TTL = 180
+TOKEN_TTL = 780
 
 _lock = threading.Lock()
 _token_queue = deque()
@@ -183,7 +183,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Token Server v2")
     parser.add_argument("--host", default="0.0.0.0", help="Bind address")
     parser.add_argument("--port", type=int, default=5050, help="Port (default 5050)")
-    parser.add_argument("--ttl", type=int, default=180, help="Token TTL in seconds")
+    parser.add_argument("--ttl", type=int, default=780, help="Token TTL in seconds")
     args = parser.parse_args()
 
     TOKEN_TTL = args.ttl
